@@ -1,4 +1,5 @@
-import Frame from '../components/frame'
+import React from "react"
+import Frame from "../components/frame"
 
 const GalleryPage = () => {
   return (
