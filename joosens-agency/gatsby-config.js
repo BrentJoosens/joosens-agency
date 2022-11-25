@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "Joosens Agency",
+    title: "Inghelbrecht Agency",
     description:
       "Artist Agency was founded in 1977 by founder, John Doe. AA continues to be at the forefront of art by establishing the careers of our talents on a holistic level -- and setting trends within the industry.",
     author: "@gatsbyjs",
@@ -9,6 +9,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-wordpress",
       options: {
@@ -16,7 +17,7 @@ module.exports = {
          * De volledige URL van je Headless WordPress site's GraphQL API.
          * Voorbeeld : "https://www.example-site.com/graphql"
          */
-        url: " http://joosens-agency.local/graphql",
+        url: "http://artist-agency-2021.local/graphql",
       },
     },
   ],
