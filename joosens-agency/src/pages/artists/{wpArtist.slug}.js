@@ -2,33 +2,63 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
+import {
+  header,
+  headerInfo,
+  headerPicture,
+  artistName,
+  fullName,
+  artistRoles,
+  artistDescription,
+  artistInfo,
+  artistPictures,
+  artistPicture,
+} from "../../page.module.css"
+
+// ArtistPage Component
+// Imports
 
 const ArtistPage = ({
   data: {
-    wpArtist: { artistMeta: artist },
+    wpArtist: {
+      artistMeta: artist,
+      roles: { nodes: roles },
+    },
   },
 }) => {
   const image = getImage(artist.profilePicture.localFile)
 
   return (
     <Layout pageTitle="Artist Template">
-      <div>
-        <GatsbyImage image={image} alt={artist.profilePicture.altText} />
-        <h3>{artist.artistName}</h3>
-        <h1>
-          {artist.firstName} {artist.lastName}
-        </h1>
-        <div dangerouslySetInnerHTML={{ __html: artist.description }} />
-        <p>Email: {artist.email}</p>
-        <p>Phone: {artist.phone}</p>
-        <p>Height: {artist.height}</p>
-        <p>Shirt Size: {artist.shirtSize}</p>
-        <p>Shoe Size: {artist.shoeSize}</p>
-        <p>Origin: {artist.origin}</p>
-      </div>
+      // Header JSX
+      <section className={artistPictures}>
+        {picture1 && (
+          <GatsbyImage
+            className={artistPicture}
+            image={picture1}
+            alt={artist.picture1.altText}
+          />
+        )}
+        {picture2 && (
+          <GatsbyImage
+            className={artistPicture}
+            image={picture2}
+            alt={artist.picture2.altText}
+          />
+        )}
+        {picture3 && (
+          <GatsbyImage
+            className={artistPicture}
+            image={picture3}
+            alt={artist.picture3.altText}
+          />
+        )}
+      </section>
     </Layout>
   )
 }
+
+// Page Query
 
 export const query = graphql`
   query MyQuery($slug: String) {
