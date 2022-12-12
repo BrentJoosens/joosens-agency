@@ -11,8 +11,6 @@ import {
 
 // Imports
 
-// Artist Component
-
 const Artist = ({ artist, slug }) => {
   const profile = getImage(artist.artistMeta.profilePicture.localFile)
   return (

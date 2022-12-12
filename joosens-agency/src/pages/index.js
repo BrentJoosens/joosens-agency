@@ -13,30 +13,41 @@ import {
   subtitle,
   artists,
 } from "../page.module.css"
+// Imports
 
 // Index Page
 
-;<Layout>
-  // Home Page Header JSX
-  <section className={section}>
-    <h2 className={subtitle}>Featured Artists</h2>
-    <p>
-      // description Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed doo eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <div className={artists}>
-      {homeFields.artists.map(artist => {
-        return (
-          <Artist
-            slug={`artists/${artist.slug}`}
-            key={artist.id}
-            artist={artist}
-          />
-        )
-      })}
-    </div>
-  </section>
-</Layout>
+const IndexPage = ({
+  data: {
+    wpPage: { homeFields },
+  },
+}) => {
+  const image = getImage(homeFields.picture.localFile)
+
+  return (
+    <Layout>
+      <section className={section}>
+        <h2 className={subtitle}>Featured Artists</h2>
+        <p>
+          // description Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit, sed doo eiusmod tempor incididunt ut labore et dolore magna
+          aliqua.
+        </p>
+        <div className={artists}>
+          {homeFields.artists.map(artist => {
+            return (
+              <Artist
+                slug={`artists/${artist.slug}`}
+                key={artist.id}
+                artist={artist}
+              />
+            )
+          })}
+        </div>
+      </section>
+    </Layout>
+  )
+}
 
 // Page Query
 
