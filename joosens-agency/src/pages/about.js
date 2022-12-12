@@ -77,7 +77,6 @@ export const query = graphql`
           }
         }
         missionTitle
-        missionDescription
         missionPicture {
           altText
           localFile {

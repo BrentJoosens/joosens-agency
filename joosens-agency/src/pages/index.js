@@ -1,28 +1,16 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 import Artist from "../components/artist"
-import {
-  header,
-  headerInfo,
-  headerPicture,
-  headerTitle,
-  CTA,
-  section,
-  subtitle,
-  artists,
-} from "../page.module.css"
-// Imports
-
-// Index Page
+import { section, subtitle, artists } from "../page.module.css"
 
 const IndexPage = ({
   data: {
     wpPage: { homeFields },
   },
 }) => {
-  const image = getImage(homeFields.picture.localFile)
+  getImage(homeFields.picture.localFile)
 
   return (
     <Layout>
@@ -48,8 +36,6 @@ const IndexPage = ({
     </Layout>
   )
 }
-
-// Page Query
 
 export const query = graphql`
   query {

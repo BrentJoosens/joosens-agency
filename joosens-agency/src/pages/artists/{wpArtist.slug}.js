@@ -2,18 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
-import {
-  header,
-  headerInfo,
-  headerPicture,
-  artistName,
-  fullName,
-  artistRoles,
-  artistDescription,
-  artistInfo,
-  artistPictures,
-  artistPicture,
-} from "../../page.module.css"
+import { artistPictures, artistPicture } from "../../page.module.css"
 
 // ArtistPage Component
 // Imports
