@@ -8,6 +8,7 @@ import {
   navLinkText,
   siteTitle,
 } from "./layout.module.css"
+import { Footer } from "./footer.js"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
